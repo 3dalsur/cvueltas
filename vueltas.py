@@ -7,7 +7,6 @@ def main(page: ft.Page):
 
     txt_number = ft.TextField(value="0", text_align=ft.TextAlign.RIGHT, width=100)
 
-    # Texto "Hello, world!" centrado
     t = ft.Text(value="Contador de Vueltas", size=30, weight="bold", color="green", text_align=ft.TextAlign.CENTER)
     page.add(
         ft.Row(
@@ -16,10 +15,8 @@ def main(page: ft.Page):
         )
     )
     
-    # Variable para controlar el ángulo de la imagen
     image_angle = 0
     
-    # Referencia al control de la imagen usando ft.Rotate
     image_to_rotate = ft.Image(
         src="woolen_roll.jpg",
         width=70,
@@ -38,7 +35,6 @@ def main(page: ft.Page):
         nonlocal image_angle
         txt_number.value = str(int(txt_number.value) - 1)
         
-        # Restar 15 grados y actualizar la imagen
         image_angle -= 15
         image_to_rotate.rotate.angle = math.radians(image_angle)
         
@@ -48,7 +44,6 @@ def main(page: ft.Page):
         nonlocal image_angle
         txt_number.value = str(int(txt_number.value) + 1)
         
-        # Sumar 15 grados y actualizar la imagen
         image_angle += 15
         image_to_rotate.rotate.angle = math.radians(image_angle)
         
@@ -63,7 +58,5 @@ def main(page: ft.Page):
         )
     )
 
-#ft.app(target=main, assets_dir="assets")
-
-if __name__ == "__main__":
-    app = ft.app_manager.app(target=main)
+# The Flet application is now directly defined here, making it ready for deployment.
+app = ft.app(target=main, view=ft.WEB_BROWSER)
