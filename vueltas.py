@@ -19,7 +19,7 @@ def main(page: ft.Page):
     image_angle = 0
     
     image_to_rotate = ft.Image(
-        src="assets/woolen_roll.jpg",  # Ruta absoluta para Render
+        src="https://labsurconsultores.cl/valida_doc/woolen_roll.jpg",  # Ruta absoluta para Render
         width=70,
         height=70,
         rotate=ft.Rotate(image_angle)
