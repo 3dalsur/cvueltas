@@ -17,9 +17,11 @@ def main(page: ft.Page):
     )
     
     image_angle = 0
-    
+    image_path = os.path.join(os.path.dirname(__file__), "assets", "woolen_roll.jpg")
     image_to_rotate = ft.Image(
-        src="https://labsurconsultores.cl/valida_doc/woolen_roll.jpg",  # Ruta absoluta para Render
+      
+        # src="https://labsurconsultores.cl/valida_doc/woolen_roll.jpg",  # Ruta absoluta para Render
+        src=image_path,
         width=70,
         height=70,
         rotate=ft.Rotate(image_angle)
