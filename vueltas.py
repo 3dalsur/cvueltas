@@ -19,7 +19,7 @@ def main(page: ft.Page):
     image_angle = 0
     
     image_to_rotate = ft.Image(
-        src="https://github.com/3dalsur/cvueltas/blob/main/woolen_roll.jpg",  # Ruta absoluta para Render
+        src="assets/woolen_roll.jpg",  # Ruta absoluta para Render
         width=70,
         height=70,
         rotate=ft.Rotate(image_angle)
@@ -62,4 +62,4 @@ def main(page: ft.Page):
 # Configuración para Render.com
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))  # Puerto dinámico de Render
-    ft.app(target=main, port=port, view=ft.WEB_BROWSER, host="0.0.0.0")
+    ft.app(target=main, port=port, view=ft.WEB_BROWSER, host="0.0.0.0", assets_dir="assets")
