@@ -1,5 +1,6 @@
 import flet as ft
 import math
+import os  # Importar el módulo os para variables de entorno
 
 def main(page: ft.Page):
     page.title = "Contador Flet"
@@ -18,7 +19,7 @@ def main(page: ft.Page):
     image_angle = 0
     
     image_to_rotate = ft.Image(
-        src="woolen_roll.jpg",
+        src="/woolen_roll.jpg",  # Ruta absoluta para Render
         width=70,
         height=70,
         rotate=ft.Rotate(image_angle)
@@ -58,5 +59,7 @@ def main(page: ft.Page):
         )
     )
 
-# The Flet application is now directly defined here, making it ready for deployment.
-app = ft.app(target=main, view=ft.WEB_BROWSER)
+# Configuración para Render.com
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))  # Puerto dinámico de Render
+    ft.app(target=main, port=port, view=ft.WEB_BROWSER, host="0.0.0.0")

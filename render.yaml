@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: contador-vueltas
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python vueltas.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.9.0
