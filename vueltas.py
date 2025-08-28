@@ -8,7 +8,7 @@ def main(page: ft.Page):
 
     txt_number = ft.TextField(value="0", text_align=ft.TextAlign.RIGHT, width=100)
 
-    t = ft.Text(value="Contador de Vueltas", size=30, weight="bold", color="green", text_align=ft.TextAlign.CENTER)
+    t = ft.Text(value="Contador Vueltas, para Mi Bubucita ;)", size=30, weight="bold", color="green", text_align=ft.TextAlign.CENTER)
     page.add(
         ft.Row(
             [t],
@@ -65,13 +65,16 @@ def main(page: ft.Page):
             [ft.IconButton(ft.Icons.REMOVE, on_click=minus_click),
              txt_number,
              ft.IconButton(ft.Icons.ADD, on_click=plus_click),
-             ft.ElevatedButton(text="Reset", on_click=reset_click, color=ft.colors.WHITE, bgcolor=ft.colors.RED_400)
+             ft.ElevatedButton(text="Reset", on_click=reset_click, color=ft.Colors.WHITE, bgcolor=ft.Colors.RED_400)
              ],
             alignment=ft.MainAxisAlignment.CENTER
         )
     )
 
+#Ejecutar el programa
+#ft.app(target=main, view=ft.WEB_BROWSER, assets_dir="assets")
+
 # Configuración para Render.com
-if __name__ == "__main__":
+ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))  # Puerto dinámico de Render
     ft.app(target=main, port=port, view=ft.WEB_BROWSER, host="0.0.0.0", assets_dir="assets")
