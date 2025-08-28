@@ -51,12 +51,22 @@ def main(page: ft.Page):
         image_to_rotate.rotate.angle = math.radians(image_angle)
         
         page.update()
+    def reset_click(e):
+        nonlocal image_angle
+        txt_number.value = "0"
+        
+        image_angle = 0
+        image_to_rotate.rotate.angle = math.radians(image_angle)
+        
+        page.update()
 
     page.add(
         ft.Row(
             [ft.IconButton(ft.Icons.REMOVE, on_click=minus_click),
              txt_number,
-             ft.IconButton(ft.Icons.ADD, on_click=plus_click)],
+             ft.IconButton(ft.Icons.ADD, on_click=plus_click),
+             ft.ElevatedButton(text="Reset", on_click=reset_click, color=ft.colors.WHITE, bgcolor=ft.colors.RED_400)
+             ],
             alignment=ft.MainAxisAlignment.CENTER
         )
     )
